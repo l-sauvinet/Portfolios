@@ -1,0 +1,132 @@
+body{
+    background-image: url(../../Asset/images/bg-main-dark.jpg);
+    --colorViolet: #6A1B9A;
+    --colorBlue: #1A237E;
+    --colorBlack: black;
+}
+
+/* start HEADER */
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Trois colonnes pour centrer l'élément du milieu */
+    align-items: center;
+    padding: 0 50px;
+    margin-top: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+  }
+
+.title{
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-self: start;
+}
+
+.blinking-cursor {
+    background-color: transparent !important;
+    margin-left: -3px;
+    margin-bottom: 2px;
+    width: 5px;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.menu_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(33, 33, 33) !important;
+    color: white;
+    gap: 20px;
+    width: fit-content;
+    justify-self: center;
+    height: 55px;
+    width: 300px;
+    border-radius: 75px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+.home_btn{
+    background-color: var(--colorViolet);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 75px;
+    border-radius: 75px;
+    transition: 0.3s;
+}
+
+.home_btn:hover{
+    background-color: var(--colorViolet);
+}
+
+.work_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 75px;
+    border-radius: 75px;
+    transition: 0.3s;
+}
+
+.work_btn:hover{
+    background-color: var(--colorViolet);
+}
+
+.about_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 75px;
+    border-radius: 75px;
+    transition: 0.3s;
+}
+
+.about_btn:hover{
+    background-color: var(--colorViolet);
+}
+
+.info{
+    justify-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.gitHub:hover{
+    scale: 0.90;
+}
+
+.linkdln:hover{
+    scale: 0.90;
+}
+
+.insta:hover{
+    scale: 0.90;
+}
+
+/* end HEADER */
