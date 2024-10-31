@@ -2,6 +2,7 @@ body{
     background-image: url(../../Asset/images/bg-main-dark.jpg);
     --colorViolet: #6A1B9A;
     --colorBlue: #1A237E;
+    --colorBluehight: #2733bd;
     --colorBlack: black;
 }
 
@@ -129,4 +130,176 @@ a {
     scale: 0.90;
 }
 
+.typing-animation {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
 /* end HEADER */
+
+/* Start MAIN */
+
+.center-message {
+    position: absolute;
+    top: 35%;
+    left: 20%; /* Corrigé pour centrer complètement */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.dev-style-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 250px;
+    height: 25px;
+    padding: 20px 30px;
+    border: 2px solid #6A1B9A; /* Couleur pour rappeler l'univers dev */
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond transparent pour l'effet console */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Ne pas sauter à la ligne */
+}
+
+.dev-style-container span {
+    font-size: 0.6em;
+    color: #ffffff; /* Couleur gris clair pour les balises */
+    font-weight: normal;
+}
+
+.dev-style-container span:first-child {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.dev-style-container span:last-child {
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+}
+
+.intro-title{
+    font-weight: normal;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    text-align: start;
+}
+
+.center-message {
+    text-align: center; /* Centre le contenu de la section */
+    margin-bottom: 40px; /* Marge inférieure pour espacer la section des compétences */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20%;
+    margin-left: 10%;
+    width: 25%;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill {
+    position: relative;
+    background-color: rgba(106, 27, 154, 0.8);
+    padding: 10px 0; /* Uniformiser l'espace vertical */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    flex: 1 1 100px; /* Chaque élément prend de l'espace de manière uniforme */
+    max-width: 150px; /* Largeur max pour contrôler la taille */
+    text-align: center;
+}
+
+.skill::after {
+    content: attr(data-tooltip); /* Affiche le texte de la tooltip */
+    position: absolute;
+    bottom: 129%; /* Positionne la tooltip au-dessus du span */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 115px;
+    font-size: 0.9em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Triangle sous la tooltip */
+.skill::before {
+    content: "";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+/* Affiche la tooltip au survol */
+.skill:hover::after,
+.skill:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
