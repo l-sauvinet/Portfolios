@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Asset/css/home.css">
+    <link rel="icon" href="Asset/logo/logo-portfolios.png" type="image/x-icon">
     <title>Portfolios</title>
 </head>
 <body>
     <div class="background"></div>
     <section class="header">
-
         <div class="title">
-            <img src="Asset/logo/code_logo.svg">Sauvinet Lucas<span class="blinking-cursor">|</span>
+            <img src="Asset/logo/code_logo.svg">
+            <span id="typing-text"></span><span id="cursor-text" class="blinking-cursor">|</span>
         </div>
-
+        
         <div class="menu">
             <div class="menu_list">
                 <div class="home_btn"><a href="index.html">Home</a></div>
@@ -27,8 +28,29 @@
             <div class="linkdln"><a href="https://www.linkedin.com/in/lucas-sauvinet-3607162a4/"><img src="Asset/logo/linkedin_logo.svg"></a></div>
             <div class="insta"><a href="https://www.instagram.com/l_ucas_73/"><img src="Asset/logo/instagram_logo.svg"></a></div>
         </div>
-
     </section>
     
+    <section class="center-message">
+        <h1 class="intro-title">Bonjour, <br>je suis Sauvinet Lucas, je suis</h1>
+        <div class="dev-style-container">
+            <span>&lt;h1&gt;</span><span id="dev-typing-text"></span><span id="dev-cursor-text" class="blinking-cursor">|</span><span>&lt;/h1&gt;</span>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h1 class="intro-title">Mes Compétences</h1>
+        <div class="skills-container">
+            <span class="skill" data-tooltip="Langage de balisage utilisé pour structurer le contenu d'une page web.">HTML</span>
+            <span class="skill" data-tooltip="Langage de style utilisé pour mettre en forme et styliser les pages web.">CSS</span>
+            <span class="skill" data-tooltip="Langage de programmation pour ajouter de l'interactivité aux sites web.">JavaScript</span>
+            <span class="skill" data-tooltip="Bibliothèque JavaScript pour construire des interfaces utilisateur.">React</span>
+            <span class="skill" data-tooltip="Environnement d'exécution JavaScript pour construire des applications côté serveur.">Node.js</span>
+            <span class="skill" data-tooltip="Framework PHP utilisé pour développer des applications web robustes.">PHP Symfony</span>
+            <span class="skill" data-tooltip="Framework PHP pour le développement rapide d'applications web.">PHP Laravel</span>
+            <span class="skill" data-tooltip="Micro-framework JavaScript pour ajouter de la réactivité côté frontend.">Stimulus</span>
+        </div>
+    </section>
+
+    <script src="js/base.js"></script>
 </body>
 </html>
