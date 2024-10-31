@@ -217,37 +217,89 @@ a {
     margin-bottom: 40px; /* Marge inférieure pour espacer la section des compétences */
 }
 
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .skills {
-    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
-    padding: 20px; /* Espace autour du contenu */
-    border-radius: 10px; /* Coins arrondis */
-    margin-top: 20%; /* Centre la section */
-    width: 80%; /* Largeur de la section */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Ombre pour un effet de profondeur */
-    color: #ffffff; /* Couleur du texte */
-    font-family: 'Courier New', Courier, monospace; /* Police de type monospace */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20%;
+    margin-left: 10%;
+    width: 25%;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.5s;
 }
 
-.skills h2 {
-    text-align: center; /* Centre le titre */
-    font-size: 2em; /* Taille du titre */
-    margin-bottom: 10px; /* Marge sous le titre */
-    color: #ffffff; /* Couleur du titre */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
-.skills ul {
-    list-style-type: none; /* Supprime les puces par défaut */
-    padding: 0; /* Enlève le padding par défaut */
+.skill {
+    position: relative;
+    background-color: rgba(106, 27, 154, 0.8);
+    padding: 10px 0; /* Uniformiser l'espace vertical */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    flex: 1 1 100px; /* Chaque élément prend de l'espace de manière uniforme */
+    max-width: 150px; /* Largeur max pour contrôler la taille */
+    text-align: center;
 }
 
-.skills li {
-    background-color: rgba(106, 27, 154, 0.8); /* Fond pour les éléments de la liste */
-    border-radius: 5px; /* Coins arrondis pour les éléments de la liste */
-    padding: 10px; /* Espace intérieur pour chaque élément */
-    margin: 5px 0; /* Espace entre les éléments */
-    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+.skill::after {
+    content: attr(data-tooltip); /* Affiche le texte de la tooltip */
+    position: absolute;
+    bottom: 129%; /* Positionne la tooltip au-dessus du span */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 115px;
+    font-size: 0.9em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
-.skills li:hover {
-    background-color: #6A1B9A; /* Changement de couleur au survol */
+/* Triangle sous la tooltip */
+.skill::before {
+    content: "";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+/* Affiche la tooltip au survol */
+.skill:hover::after,
+.skill:hover::before {
+    opacity: 1;
+    visibility: visible;
 }

@@ -35,3 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setTimeout(devType, 1700);
 });
+
+
+window.addEventListener("scroll", function() {
+    const scrollPosition = window.scrollY;
+    document.body.style.backgroundPositionY = `${scrollPosition * 0.2}px`;
+});
